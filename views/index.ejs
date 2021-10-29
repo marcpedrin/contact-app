@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="main " id="main">
+        <div class="phone">
+            <div class="top">
+                <div class="first">
+                    <!-- <img src="https://secure.gravatar.com/avatar/032eef37cfe88ba1854dfb25d7602b7b?s=64&amp;d=identicon&amp;r=g" alt=""> -->
+                    <h1 class="title">Contacts</h1>
+                </div>
+                <div class="new-button">
+                    <a href="/create" class="new">+</a>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- table -->
+            <!-- <form> -->
+                <!-- <table class="table">
+            <thead class="thead">
+                <tr class="tr">
+                    <th><img class="img" src="https://secure.gravatar.com/avatar/032eef37cfe88ba1854dfb25d7602b7b?s=64&amp;d=identicon&amp;r=g" alt=""></th>
+                    <th>Name</th>
+                    <th>Number</th>
+                    <div class="line"></div>
+                </tr>
+                
+            </thead>
+            <tbody>
+
+
+
+                this is where 1 data div starts
+
+
+
+               
+            </tbody>
+        </table> -->
+
+
+
+
+
+
+
+
+
+
+  <% contacts.forEach(contact=>{%>
+
+    <div class="data-holder">
+        <a href="/update/<%= contact.id%>">
+        <div class="data-line"></div>
+        <div class="data-content">
+            <div class="text name">
+                <img class="img"
+                    src="https://secure.gravatar.com/avatar/032eef37cfe88ba1854dfb25d7602b7b?s=64&amp;d=identicon&amp;r=g"
+                    alt="">
+                <h1 class="h1">
+                    <%= contact.name%>
+                </h1>
+            </div>
+            <div class="text contact" >
+                <h1>
+                    <%= contact.contact%>
+                </h1>
+            </div>
+            <div class="text email" >
+                <h1>
+                    <%= contact.email%>
+                </h1>
+            </div>
+                
+            <form action="/<%= contact.id%>?_method=DELETE" method="POST" class="delete">
+            <button type="submit"><h3>Delete</h3></button>
+            </form>
+        </div>
+    </a>
+    </div>
+
+
+<%})%>
+
+
+
+            </form>
+
+        </div>
+    </div>
+
+    <style>
+
+.delete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    margin-left: 730px;
+}
+
+.delete button {
+    padding: 8px 20px;
+    background-color: rgb(0, 162, 255);
+    margin-top: 15px;
+    border: none;
+    border-radius: 20px;
+}
+
+.delete h3 {
+    color: rgb(19, 19, 19);
+}
+.data-content div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    </style>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: rgb(11, 22, 36);
+            overflow-y: hidden;
+        }
+
+        /* specific styles */
+
+        .main .phone {
+            width: 900px;
+            height: 730px;
+            background-color: rgb(19, 19, 19);
+            border: solid 3px white;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+        }
+
+        .top .title {
+            color: white;
+            font-family: 'poppins', sans-serif;
+            font-weight: 500;
+            text-shadow: 0px 0px 5px black;
+        }
+
+        .top {
+            background-color: rgb(37, 37, 37);
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 0px 10px;
+        }
+
+        .first {
+            display: flex;
+
+        }
+
+        .new-button {
+            margin-left: 220px;
+            width: 45px;
+            height: 45px;
+            background-color: rgb(0, 162, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px;
+        }
+
+        .new-button .new {
+            color: white;
+            font-family: 'poppins', sans-serif;
+            text-decoration: none;
+            font-size: 30px;
+            margin-top: 3px;
+            margin-left: 1px;
+        }
+
+        .img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px;
+        }
+    </style>
+
+    <style>
+        .data-holder a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 500px;
+            margin-top: 10px;
+            
+        }
+
+        .data-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr  1fr 1fr ;
+            width: 400px;
+            grid-gap: 50px;
+        }
+
+        .data-holder .data-line {
+            width: 850px;
+            height: 1px;
+            background-color: white;
+            margin-left: 400px;
+        }
+
+        .text h1 {
+            font-weight: 200;
+            font-size: 18px;
+            letter-spacing: 4px;
+            margin-top: 10px;
+        }
+
+        .text .h1 {
+            margin-left: 20px;
+            width: 150px;
+        }
+
+        .text {
+            font-family: 'poppins', sans-serif;
+            font-weight: 100;
+            font-size: 12px;
+            display: flex;
+            color: white;
+            margin-top: 10px;
+        }
+
+
+
+
+        .tr {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 500px;
+        }
+
+        .tr th {
+            color: white;
+            font-family: 'poppins', sans-serif;
+            font-weight: 300;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .line {
+            width: 450px;
+            height: 1px;
+            background-color: white;
+            position: absolute;
+            margin-top: 45px;
+            margin-left: 25px;
+        }
+    </style>
+
+
+
+
+
+
+
+</body>
+
+</html>

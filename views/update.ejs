@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<div class="main " id="main">
+    <div class="phone">
+    <div class="top">
+       <div class="first">
+        <!-- <img src="https://secure.gravatar.com/avatar/032eef37cfe88ba1854dfb25d7602b7b?s=64&amp;d=identicon&amp;r=g" alt=""> -->
+        
+        <h1 class="title">Update Contact</h1>
+        
+
+        
+    </div>
+
+</div>
+<div class="img-con">
+    <div class="white"></div>
+<img class="img new" src="https://secure.gravatar.com/avatar/032eef37cfe88ba1854dfb25d7602b7b?s=64&amp;d=identicon&amp;r=g" alt="">
+</div>
+<div class="form-container">
+
+    
+            <form action="/<%= contact.id%>?_method=PUT" method="POST">
+            <div class="name div">
+            <label for="name">Name</label>
+            <input name="name" type="text" value="<%= contact.name%>">
+            </div>
+            
+
+            <div class="number div">
+                <label for="contact">Contact Number</label>
+                <input name="contact" type="number" value="<%= contact.contact%>">
+                </div>
+
+                <div class="email div">
+
+                    
+                    <label for="email">E - Mail</label>
+                    <input name="email" type="email" value="<%= contact.email%>">
+                    </div>
+
+                 <div class="buttons">
+                       
+                       <a href='/' class="back">Go Back</a>
+                       <button class="save" type="submit">Save</button>   
+                    </div> 
+            </form>
+        </div>
+
+
+
+
+    <!-- table -->
+    <form action="/" method="POST">
+        
+        
+    </form>
+    
+    </div>
+</div>
+
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body{
+        background-color: rgb(11, 22, 36);
+        overflow-y: hidden;
+    }
+    
+    /* specific styles */
+    
+    .main .phone{
+        width: 900px;
+        height: 730px;
+        background-color: rgb(19, 19, 19);
+        border: solid 3px white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .main{
+        display: flex;
+        justify-content: center;
+    }
+
+    .top .title {
+        color: white;
+        font-family: 'poppins', sans-serif;
+        font-weight: 500;
+        text-shadow: 0px 0px 5px black;
+        letter-spacing: 8px;
+    }
+
+    .top{
+        background-color: rgb(37, 37, 37);
+        height: 60px;
+        display:  flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 0px 10px;
+    }
+
+    .first{
+        display: flex;
+        width: 894px;
+        justify-content: center;
+    }
+
+    .new-button{
+        margin-left: 220px;
+        width: 45px;
+        height: 45px;
+        background-color: rgb(0, 162, 255);
+        display:  flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px;
+    }
+
+    .new-button .new {
+        color: white;
+        font-family: 'poppins', sans-serif;
+        text-decoration: none;
+        font-size: 30px;
+        margin-top: 3px;
+        margin-left: 1px;
+    }
+
+.img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px;
+    }
+
+
+
+    
+ 
+    </style>
+
+<style>
+.tr{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 500px;
+}
+
+.tr th {
+    color: white;
+    font-family: 'poppins', sans-serif;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.line{
+    width: 450px;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    margin-top: 45px;
+    margin-left: 25px;
+}
+</style>
+
+<style>
+
+    .img-con{
+        width: 496px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 35px;
+    }
+
+    .white{
+        background-color: white;
+        border-radius: 50%;
+        width: 140px;
+        height: 140px;
+    }
+
+    .new {
+        width: 120px;
+        height: 120px;
+        position: absolute;
+        box-shadow: 0px 0px 20px;
+    }
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 496px;
+    margin-top: 40px;
+}
+
+.form-container{
+    width: 496px;
+    height: 730px;
+    display: flex;
+    justify-content: center;
+    
+    }
+
+.div{
+    display: flex;
+    flex-direction: column;
+}
+
+.div label {
+    color: white;
+    font-family: 'poppins', sans-serif;
+    margin-top: 30px;
+}
+
+.div input{
+    width: 500px;
+    height: 40px;
+    font-size: 18px;
+    font-family: 'poppins', sans-serif;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    outline: none;
+}
+
+
+.save {
+    width: 130px;
+    height: 40px;
+    background-color: rgb(7, 7, 34);
+    border: none;
+    border-radius: 20px;
+    font-family: 'poppins', sans-serif;
+    color: white;
+    font-size: 25;
+}
+
+.save:hover{
+    background-color: rgb(77, 77, 77);
+    transition: 0.6s ease;
+}
+
+.back{
+    background-color: rgb(77, 77, 77);
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    font-family: 'poppins', sans-serif;
+    color: white;
+    font-size: 25;
+    transition: .3s ease;
+}
+
+.back:hover{
+    background-color: rgb(7, 7, 34);
+}
+</style>
+
+
+
+
+</body>
+</html>
